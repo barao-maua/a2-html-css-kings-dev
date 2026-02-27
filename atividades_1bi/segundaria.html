@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>     
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundaria</title>
+    <style>
+        body { 
+            background-color: lightblue; 
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden; /* Evita barra de rolagem quando eles correrem */
+        }
+
+        h1 { 
+            color: navy; 
+            animation: myAnimation 5s infinite;  
+            padding: 10px;
+            display: inline-block;
+        }
+
+        @keyframes myAnimation {
+            0% { background-color: red; color: white; }
+            50% { background-color: blue; color: white; }
+            75% { background-color: green; color: white; }
+            100% { background-color: purple; color: white; }
+        }
+
+        /* Estilo dos personagens que vão correr */
+        .personagem {
+            position: fixed;
+            bottom: 50px;
+            width: 100px;
+            display: none; /* Escondidos por padrão */
+            z-index: 1000;
+        }
+
+        /* Animação de corrida */
+        @keyframes correr {
+            from { left: -150px; }
+            to { left: 110%; }
+        }
+
+        a {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: darkblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <a href="principal.html">← Voltar para a página principal</a>     
+    
+    <h1>NARUTO</h1>
+    
+    <p>Naruto Uzumaki (うずまきナルト, Uzumaki Naruto) é um shinobi de Konohagakure do clã Uzumaki e protagonista homônimo da franquia Naruto. Desde seu nascimento, ele se tornou jinchuuriki das Nove-Caudas, um destino que o levou a ser condenado e negligenciado por toda a aldeia durante sua infância. Depois de entrar para o Time 7, ao lado de Sakura Haruno, Sasuke Uchiha e sob comando de Kakashi Hatake, Naruto trabalhou duro para ganhar o respeito e o reconhecimento da aldeia, com o sonho de se tornar Hokage.</p>
+
+    <p style="font-style: italic; border-left: 5px solid navy; padding-left: 10px;"> 
+        “E o meu sonho é ser o maior Hokage!! Dessa forma, as pessoas vão parar de me desrespeitar e começar a me tratar como se eu fosse alguém. Alguém importante!”
+        <br>— Naruto para Iruka.
+    </p>
+
+    <p>Naruto é um personagem fictício criado por Masashi Kishimoto e é o protagonista da série de mangá e anime Naruto. Ele é um jovem ninja que sonha em se tornar o Hokage, o líder de sua aldeia, para ganhar o respeito dos outros. Naruto é conhecido por sua personalidade energética, determinação e lealdade aos seus amigos.</p>
+
+    <img id="naruto" class="personagem" src="https://i.pinimg.com/originals/ae/89/c2/ae89c2b34198141f73e42583b55ad2d4.gif" alt="Naruto Correndo">
+    <img id="naruto1" class="personagem" src="https://i.pinimg.com/originals/ae/89/c2/ae89c2b34198141f73e42583b55ad2d4.gif" alt="Naruto Correndo">
+    <img id="naruto2" class="personagem" src="https://i.pinimg.com/originals/ae/89/c2/ae89c2b34198141f73e42583b55ad2d4.gif" alt="Naruto Correndo">
+    <img id="naruto3" class="personagem" src="https://i.pinimg.com/originals/ae/89/c2/ae89c2b34198141f73e42583b55ad2d4.gif" alt="Naruto Correndo">
+    <img id="naruto4" class="personagem" src="https://i.pinimg.com/originals/ae/89/c2/ae89c2b34198141f73e42583b55ad2d4.gif" alt="Naruto Correndo">
+
+    <button onclick="liberarNinjas()">JUTSU CLONE DAS SOMBRAS!</button>
+
+    <script>
+        function liberarNinjas() {
+            const naruto = document.getElementById('naruto');
+            const naruto1 = document.getElementById('naruto1');
+            const naruto2 = document.getElementById('naruto2');
+            const naruto3 = document.getElementById('naruto3');
+            const naruto4 = document.getElementById('naruto4');
+             // Usando a quinta imagem como "Sasuke" para a corrida
+
+            // Mostra os bonequinhos
+            naruto.style.display = 'block';
+            naruto1.style.display = 'block';
+            naruto2.style.display = 'block';
+            naruto3.style.display = 'block';
+            naruto4.style.display = 'block';
+
+            // Aplica a animação (Naruto um pouco à frente do Sasuke)
+            naruto.style.animation = 'correr 3s linear forwards';
+            naruto1.style.animation = 'correr 3.5s linear 0.2s forwards';
+            naruto2.style.animation = 'correr 3.5s linear 0.4s forwards';
+            naruto3.style.animation = 'correr 3.5s linear 0.6s forwards';
+            naruto4.style.animation = 'correr 3.5s linear 0.8s forwards';
+
+            // Opcional: Esconde eles de novo após a corrida para poder clicar de novo
+            setTimeout(() => {
+                naruto.style.display = 'none';
+                naruto1.style.display = 'none';
+                naruto2.style.display = 'none';
+                naruto3.style.display = 'none';
+                naruto4.style.display = 'none';
+                naruto.style.animation = '';
+                naruto1.style.animation = '';
+                naruto2.style.animation = '';
+                naruto3.style.animation = '';
+                naruto4.style.animation = '';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
